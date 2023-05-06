@@ -12,9 +12,7 @@ public class DemoController {
     private Coach myCoach;
 
     @Autowired
-    public void DemoController(
-            @Qualifier("cricketCoach") Coach theCoach,
-            @Qualifier("cricketCoach") Coach theAnotherCoach) {
+    public void DemoController(@Qualifier("aquatic") Coach theCoach) {
         System.out.println("In constructor: " + getClass().getSimpleName());
         myCoach = theCoach;
     }
@@ -23,5 +21,4 @@ public class DemoController {
     public String getDailyWorkout() {
         return myCoach.getDailyWorkout();
     }
-
 }
